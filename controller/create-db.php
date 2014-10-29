@@ -15,12 +15,17 @@ if(!$exists) {
     // if exists it will say successfully created.
 	if($query) {
         echo "Successfully created database: " . $database;
+}
 	}
 	else {
-		echo "Database already created";
+		echo "Database already exists";
 	}
-}
-
+$query = $connection->query("CREATE TABLE posts ("
+	. "id int (11) NOT NULL AUTO_INCREMENT, "
+	. "title varchar (255) NOT NULL,"
+	. "post text NOT NULL,"
+	. "PRIMARY KEY (id))");
+// closes the connection
 $connection->close();
 
 ?>
