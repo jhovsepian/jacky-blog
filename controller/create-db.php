@@ -5,7 +5,7 @@ require_once(__DIR__ . "/../model/database.php");
 $connection = new mysqli($host, $username, $password);
 // if no connection, you will recieve an error messege, and website will die.
 if($connection->connect_error) {
-     die("Error: " . $connection->connect_error);
+     die("<p>Error: " . $connection->connect_error . "</p>");
 }
 
 $exists = $connection->select_db($database);
@@ -14,21 +14,27 @@ if(!$exists) {
 	$query = $connection->query("CREATE DATABASE $database");
     // if exists it will say successfully created.
 	if($query) {
-        echo "Successfully created database: " . $database;
+        echo "<p>Successfully created database: " . $database . "</p>";
 }
 	}
 	else {
-		echo "Database already exists";
+		echo "<p>Database already exists</p>";
 	}
 	// connection to query
 $query = $connection->query("CREATE TABLE posts ("
 	. "id int (11) NOT NULL AUTO_INCREMENT, "
+	// the title is a string of characters
 	. "title varchar (255) NOT NULL,"
 	. "post text NOT NULL,"
+	// this is text
 	. "PRIMARY KEY (id))");
+// primary text is "id"
 
 if($query) {
-	echo "Successfully create table: posts";
+	echo "<p>Successfully create table: posts</p>";
+}
+else {
+	echo "<p>$connection->error</p>";
 }
 // closes the connection
 $connection->close();
