@@ -29,9 +29,10 @@ $query = $connection->query("CREATE TABLE posts ("
 	// this is text
 	. "PRIMARY KEY (id))");
 // primary text is "id"
-
+// below i already created a table
 if($query) {
 	echo "<p>Successfully create table: posts</p>";
+	// below if table is not existed there will be an error
 }
 else {
 	echo "<p>$connection->error</p>";
