@@ -1,3 +1,5 @@
+<!-- This created a blog post that i can submit into my phpmyadmin. -->
+<!-- I can write whatever i want and submit it -->
 <h1>Create Blog Post</h1>
 
 <form>
