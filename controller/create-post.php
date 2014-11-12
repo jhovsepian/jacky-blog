@@ -4,5 +4,6 @@
 // this sends info to the post	in create-db
 	$post = filter_input(INPUT_POST, "post", FILTER_SANITIZE_STRING);
 	
+	// this is to echo out my title and my post 
 	echo "<p>Title: $title</p>"; 
 	echo "<p>Post: $post</p>";
