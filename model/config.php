@@ -3,6 +3,7 @@
 	$path = "/jacky-blog/";
 	// this is code refactoring
 	//what it does is that it maintains the code making it easy
+	// we deleted our old database file to emerge it with this file.
 	$host = "localhost";
 	$username = "root";
 	$password = "root";
