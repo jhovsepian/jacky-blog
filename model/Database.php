@@ -18,4 +18,17 @@ class Database {
 		$this->password = $password;
 		$this->database = $database;
 	}
+// added more functions
+// these are important to use information to perform actions on our database.
+	public function openConnection() {
+
+	}
+
+	public function closeConnection() {
+
+	}
+
+	public function query($string) {
+
+	}
 }
