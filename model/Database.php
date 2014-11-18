@@ -21,7 +21,14 @@ class Database {
 // added more functions
 // these are important to use information to perform actions on our database.
 	public function openConnection() {
-
+		//this is a new sqli variable object. 
+		// this will check whether we have a connection or not.
+		// WE want to establish a connection to the database.
+		$this->connection = new mysqli($this->host, $this->username, $this->password, $this->database);
+     // if no connection, you will recieve an error messege, and website will die.
+	if($this->connection->connect_error) {
+     die("<p>Error: " . $this->connection->connect_error . "</p>");
+}
 	}
 
 	public function closeConnection() {
