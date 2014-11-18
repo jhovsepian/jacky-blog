@@ -20,6 +20,7 @@ class Database {
 	}
 // added more functions
 // these are important to use information to perform actions on our database.
+// this opens the connection
 	public function openConnection() {
 		//this is a new sqli variable object. 
 		// this will check whether we have a connection or not.
@@ -30,9 +31,14 @@ class Database {
      die("<p>Error: " . $this->connection->connect_error . "</p>");
 }
 	}
-
+	// this closes the connection above
 	public function closeConnection() {
-
+		// if there is no information in the varible will return no.
+		// if there is information in the varible will return yes.
+		// isset checks if the varible has been set or not.
+		if (isset($this->connection)) {
+				$this->connection->close();
+		}
 	}
 
 	public function query($string) {
