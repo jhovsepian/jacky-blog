@@ -1,9 +1,6 @@
 <?php
 	require_once (__DIR__ . "/../model/config.php");
-// to create a new mysqli object
-	// creating a connection to the database
-	//this is to send the information to the create post file
-	$connection = new mysqli($host, $username, $password, $database); 
+
 // this sends info to the title in create-db
 	$title = filter_input(INPUT_POST, "title", FILTER_SANITIZE_STRING);
 // this sends info to the post	in create-db
@@ -20,5 +17,3 @@
 	else {
 		echo "<p>$connection->error</p>";
 	}
-// this closes the connection
-	$connection->close();

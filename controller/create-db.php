@@ -1,8 +1,6 @@
 <?php
 // The directory of the file. If used inside an include, the directory of the included file is returned
 require_once(__DIR__ . "/../model/config.php");
-// checks if connection works.
-$connection = new mysqli($host, $username, $password);
 // if no connection, you will recieve an error messege, and website will die.
 if($connection->connect_error) {
      die("<p>Error: " . $connection->connect_error . "</p>");

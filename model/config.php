@@ -8,3 +8,6 @@
 	$username = "root";
 	$password = "root";
 	$database = "blog_db"; 
+//this is to access the open connection, close connection, and even the query function
+	// this will help to query the database
+	$connection = new Database($host, $username, $password, $database);
