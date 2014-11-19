@@ -40,8 +40,15 @@ class Database {
 				$this->connection->close();
 		}
 	}
-
+// below will tell you if the query was successful or not.
 	public function query($string) {
-
+		$this->openConnection();
+// this is to open up a connection to the database.
+//this is to query the database
+		$query = $this->connection->query($string);
+//	closes the connection to the database
+		$this->closeConnection();
+//this returns the result as being successful;true or not being successful;false
+		return $query;
 	}
 }
