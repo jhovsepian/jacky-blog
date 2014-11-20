@@ -1,4 +1,6 @@
 <?php
+require_once(__DIR__ . "/database.php");
+
 // this path is to all the project files
 	$path = "/jacky-blog/";
 	// this is code refactoring

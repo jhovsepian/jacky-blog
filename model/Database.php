@@ -17,6 +17,26 @@ class Database {
 		$this->username = $username;
 		$this->password = $password;
 		$this->database = $database;
+
+$this->connection = new mysqli($host, $username, $password);
+	
+// if no connection, you will recieve an error messege, and website will die.
+if($this->connection->connect_error) {
+     die("<p>Error: " . $this->connection->connect_error . "</p>");
+}
+
+$exists = $this->connection->select_db($database);
+// code below lets you know the database doesnt exist
+if(!$exists) {
+	$query = $this->connection->query("CREATE DATABASE $database");
+    // if exists it will say successfully created.
+	if($query) {
+        echo "<p>Successfully created database: " . $database . "</p>";
+}
+	}
+	else {
+		echo "<p>Database already exists</p>";
+	}
 	}
 // added more functions
 // these are important to use information to perform actions on our database.
