@@ -9,6 +9,7 @@ class Database {
 	private $username;
 	private $password;
 	private $database;
+	public $error;
 // create a constructer. 
 // a constructer is important because it allows us to bulid objects of type database.
 // when we construct our object, we are going to pass the information to the host, username, password, database.
@@ -66,6 +67,10 @@ if(!$exists) {
 // this is to open up a connection to the database.
 //this is to query the database
 		$query = $this->connection->query($string);
+// this below connects it to the varible
+		if (!$query) {
+			$this->error = $this->connection->error;
+		}
 //	closes the connection to the database
 		$this->closeConnection();
 //this returns the result as being successful;true or not being successful;false
