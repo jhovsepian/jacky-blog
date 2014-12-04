@@ -14,7 +14,7 @@
 // if it successfully inserted info to the post table this is what it will say.. 
 	if($query) {
 		echo "<p>Successfully inserted post: $title</p>";
-		echo "Posted on: " . $date->format("M/D/Y") . " at " . $time->format("g:i");
+		echo "Posted on: " . $date->format("m/d/y") . " at " . $time->format("g:i");
 	}
 	// if it didnt successfully insert info to the post table it will have an error
 	else {
