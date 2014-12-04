@@ -1,5 +1,5 @@
 <?php
-require_once(__DIR__ . "/database.php");
+require_once(__DIR__ . "/../model/Database.php");
 session_start();
 // this path is to all the project files
 	$path = "/jacky-blog/";
@@ -11,7 +11,7 @@ session_start();
 	$password = "root";
 	$database = "blog_db"; 
 
-if(isset($_SESSION["connection"])) {
+if(!isset($_SESSION["connection"])) {
 //this is to access the open connection, close connection, and even the query function
 	// this will help to query the database
 	$connection = new Database($host, $username, $password, $database);
