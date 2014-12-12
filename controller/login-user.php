@@ -5,4 +5,19 @@
 	$password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_STRING);
 // someone picks a new username then the query makes the password.
 	$query = $_SESSION["connection"]->query("SELECT salt, password FROM users WHERE username = '$username'");
+
+	if($query->num_rows == 1) {
+		$row = $query->fetch_array();
+
+		if($row["password"] === crypt($password, $row["salt"])) {
+			echo "<p>Login Successful!</p>";
+		}
+		else {
+			echo "<p>Invalid username and password</p>";
+		}
+	}
+		else {
+			echo "<p>Invalid username and password</p>";
+		}
+	
 ?>
