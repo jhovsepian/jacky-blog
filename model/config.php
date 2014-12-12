@@ -1,6 +1,9 @@
 <?php
 require_once(__DIR__ . "/../model/Database.php");
 session_start();
+//this regenerates the id
+//makes sure hacker doesnt get info
+session_regenerate_id(true);
 // this path is to all the project files
 	$path = "/jacky-blog/";
 	// this is code refactoring
@@ -14,6 +17,6 @@ session_start();
 if(!isset($_SESSION["connection"])) {
 //this is to access the open connection, close connection, and even the query function
 	// this will help to query the database
-	$connection = new Database($host, $username, $password, $database);
+	$connection = new Database($host, $usernam e, $password, $database);
 	$_SESSION["connection"] = $connection;
 }
