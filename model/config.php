@@ -17,6 +17,6 @@ session_regenerate_id(true);
 if(!isset($_SESSION["connection"])) {
 //this is to access the open connection, close connection, and even the query function
 	// this will help to query the database
-	$connection = new Database($host, $usernam e, $password, $database);
+	$connection = new Database($host, $username, $password, $database);
 	$_SESSION["connection"] = $connection;
 }
