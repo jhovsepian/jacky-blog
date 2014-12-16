@@ -1,5 +1,11 @@
 <?php
 	require_once (__DIR__ . "/../model/config.php");
+	require_once (__DIR__ . "/../controller/login-verify.php");
+//checking if user is authenticated
+	if(!authenticateUser()) {
+		header("Location: " . $path . "index.php");
+		die();
+	}
 ?>
 <center>
 <!-- This created a blog post that i can submit into my phpmyadmin. -->
